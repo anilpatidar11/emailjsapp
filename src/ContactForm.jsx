@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import "./ContactForm.css";
@@ -19,13 +18,12 @@ export default function ContactForm() {
   const sendEmail = (e) => {
     e.preventDefault();
 
+    const SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
     emailjs
-      .send(
-           "service_yh35uxx",   
-        "template_w7nhgnw",
-        formData,            
-        "GH5oEMG8W5rMqHbK8" 
-      )
+      .send(SERVICE_ID, TEMPLATE_ID, formData, PUBLIC_KEY)
       .then(
         () => {
           alert("Message Sent Successfully!");
@@ -42,7 +40,9 @@ export default function ContactForm() {
     <div className="contact-container">
       <form onSubmit={sendEmail} className="contact-form">
         <h2>📩 Contact Us</h2>
-        <p className="form-subtitle">We’d love to hear from you. Please fill out the form below.</p>
+        <p className="form-subtitle">
+          We’d love to hear from you. Please fill out the form below.
+        </p>
 
         <input
           type="text"
