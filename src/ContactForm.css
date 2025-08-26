@@ -1,0 +1,112 @@
+/* Full page container - center the form */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6d2fb0, #95a2b9); /* bright gradient */
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Form styling - glassmorphism + blur */
+.contact-form {
+  background: rgba(255, 255, 255, 0.15); /* semi-transparent for blur */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Heading */
+.contact-form h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.contact-form p.form-subtitle {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 25px;
+  color: #e0e0e0;
+}
+
+/* Inputs and textarea - visible */
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.25); /* darker for visibility */
+  color: #fff; /* input text color */
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-form input:hover,
+.contact-form textarea:hover,
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 1px solid #fff;
+  background: rgba(0, 0, 0, 0.35);
+  outline: none;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+/* Textarea specific */
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Button */
+.contact-form button {
+  padding: 16px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 75, 43, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .contact-form {
+    padding: 25px;
+  }
+
+  .contact-form h2 {
+    font-size: 24px;
+  }
+}
